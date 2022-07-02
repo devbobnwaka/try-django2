@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if object %}
+
+<h1>Title: {{object.title}} - ({{object.id}})!</h1>
+<p>Content: {{object.content}}</p>
+
+{% endif %}
+
+{% endblock content %}

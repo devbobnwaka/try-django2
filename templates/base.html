@@ -7,7 +7,10 @@
     <title>Trydjango</title>
 </head>
 <body>
-    
+    <form action="/articles/" method="get">
+        <input type="text" name="q"/>
+        <input type="submit" value="search"/>
+    </form>
     {% block content %}
 
     {% endblock content %}
