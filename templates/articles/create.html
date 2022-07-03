@@ -3,13 +3,13 @@
 {% block content %}
 
 {% if not created %}
+
 <form action="." method="POST">
     {% csrf_token %}
-    <br><br>
-    <input type="text" name="title" placeholder="Title" /><br><br>
-    <textarea name="content" id="" cols="30" rows="10" placeholder="Content"></textarea><br><br>
+    {{ form.as_p }}
     <button type="submit">Create article</button>
 </form>
+ 
 {% else %}
     <br><br>
     <a href="/articles/{{object.id}}">{{object.title}} - {{object.content}}</a>
