@@ -4,10 +4,14 @@
 
 <h1>Title: {{title}} - ({{id}})!</h1>
 <p>Title: {{content}}</p>
-
+<div>
+    <a href="{% url 'article-create' %}">Create Article</a><br><br>
+</div>
 {% for x in object_list %}
     {% if x.title %}
-        <li><a href="/articles/{{x.id}}">{{x.title}} - {{x.content}}</a></li>
+        <!-- <li><a href="/articles/{{x.slug}}">{{x.title}} - {{x.content}}</a></li> -->
+        <li><a href="{{x.get_absolute_url}}">{{x.title}} - {{x.content}}</a></li>
+        <!-- <li><a href="{% url 'article-detail' slug=x.slug %}">{{x.title}} - {{x.content}}</a></li> -->
     {% endif %}
 {% endfor %}
 
